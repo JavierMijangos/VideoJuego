@@ -19,8 +19,8 @@ public class GameController : MonoBehaviour {
 
 	public GameObject exclamation;
 
-	public UkyoAnimationController UkyoController;
-	public GenjuroAnimationController GenjuroController;
+	public DuelAnimationController PlayerController;
+	public DuelAnimationController EnemyController;
 	public CameraController Cam;
 	public SlashAnimatorController slashController;
 
@@ -59,20 +59,20 @@ public class GameController : MonoBehaviour {
 		}
 		if(Time.time > tFlash && !slash){
 			slash = true;
-			UkyoController.StandAnimation();
-			GenjuroController.StandAnimation();
+			PlayerController.StandAnimation();
+			EnemyController.StandAnimation();
 			Cam.RenderDefault();
 			tEsperaGanador = Time.time + 0.9f;
 		}
 		if(Time.time > tEsperaGanador && slash && !over && win){
 			over = true;
-			UkyoController.WinAnimation();
-			GenjuroController.DeathAnimation();
+			PlayerController.WinAnimation();
+			EnemyController.DeathAnimation();
 		}
 		if(Time.time > tEsperaGanador && slash && !over && lose){
 			over = true;
-			UkyoController.DeathAnimation();
-			GenjuroController.WinAnimation();
+			PlayerController.DeathAnimation();
+			EnemyController.WinAnimation();
 		}
 
 
