@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\DuelAnimationController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\LoadNextLevel.cs" />
      <Compile Include="Assets\Scripts\SlashAnimatorController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
