@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour {
 	private bool win;
 	private bool slash;
 	private bool lose;
+	private bool blooded;
 	private bool over;
 	/*private bool lose;
 	private bool stand;
@@ -16,6 +17,7 @@ public class GameController : MonoBehaviour {
 	public float tValido;
 	public float tFlash;
 	private float tEsperaGanador;
+	private float tDesangre;
 
 	public GameObject exclamation;
 
@@ -24,11 +26,16 @@ public class GameController : MonoBehaviour {
 	public CameraController Cam;
 	public SlashAnimatorController slashController;
 
+	public GameObject blood;
+	public GameObject enemyHead;
+	public GameObject playerHead;
+
 	// Use this for initialization
 	void Start () {
 		win = false;
 		lose = false;
 		slash = false;
+		blooded = false;
 		over = false;
 		RandomeTime ();
 		tAtaque += tEsperaInicial;
@@ -50,7 +57,7 @@ public class GameController : MonoBehaviour {
 			slashController.SlashAnimation();
 			win = true;
 		}
-		if(Time.time < tAtaque && Input.GetKey(KeyCode.Z) || Time.time > tValido + tAtaque && !lose && !win){
+		if(Time.time < tAtaque && Input.GetKey(KeyCode.Z) && !lose || Time.time > tValido + tAtaque && !lose && !win){
 			tFlash = Time.time + 0.2f;
 			exclamation.SetActive(false);
 			Cam.RenderSlash();
@@ -62,15 +69,30 @@ public class GameController : MonoBehaviour {
 			PlayerController.StandAnimation();
 			EnemyController.StandAnimation();
 			Cam.RenderDefault();
+			tDesangre=Time.time + 0.9f;
+		}
+		if (Time.time > tDesangre && slash && !over && win && !blooded) {
+			blooded= true;
+			Instantiate(blood, new Vector3(-3.60f,0,0), Quaternion.Euler(0,180,12));
 			tEsperaGanador = Time.time + 0.9f;
 		}
-		if(Time.time > tEsperaGanador && slash && !over && win){
+		if (Time.time > tDesangre && slash && !over && lose && !blooded) {
+			blooded= true;
+			Instantiate(blood, new Vector3(2.80f,0,0), Quaternion.Euler(0,0,32));
+			tEsperaGanador = Time.time + 0.9f;
+		}
+		if(Time.time > tEsperaGanador && slash && !over && win && blooded){
 			over = true;
+			GameObject.FindWithTag("Blood").SetActive(false);
+			Instantiate(enemyHead, new Vector3(-3.60f,0,0), Quaternion.Euler(0,180,12));
 			PlayerController.WinAnimation();
 			EnemyController.DeathAnimation();
+
 		}
-		if(Time.time > tEsperaGanador && slash && !over && lose){
+		if(Time.time > tEsperaGanador && slash && !over && lose && blooded){
 			over = true;
+			GameObject.FindWithTag("Blood").SetActive(false);
+			Instantiate(playerHead, new Vector3(3.5f,0,0), Quaternion.identity);
 			PlayerController.DeathAnimation();
 			EnemyController.WinAnimation();
 		}
