@@ -1,0 +1,49 @@
+Initialize engine version: 5.1.3f1 (b0a23b31c3d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0x116)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.056 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: D:\C\FMAT\VideoJuegos\VideoJuego\ProyectoFinal\Builds\SamuraiTale_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.672904 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 426.
+Total: 0.221511 ms (FindLiveObjects: 0.026512 ms CreateObjectMapping: 0.018388 ms MarkObjects: 0.165920 ms  DeleteObjects: 0.010263 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.994888 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 426.
+Total: 0.912987 ms (FindLiveObjects: 0.130854 ms CreateObjectMapping: 0.047466 ms MarkObjects: 0.698318 ms  DeleteObjects: 0.032927 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.068217 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 456.
+Total: 1.089598 ms (FindLiveObjects: 0.132137 ms CreateObjectMapping: 0.066282 ms MarkObjects: 0.720554 ms  DeleteObjects: 0.168058 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.171275 ms
+
+Unloading 83 unused Assets to reduce memory usage. Loaded Objects now: 462.
+Total: 0.427628 ms (FindLiveObjects: 0.045328 ms CreateObjectMapping: 0.047466 ms MarkObjects: 0.227926 ms  DeleteObjects: 0.106051 ms)
+

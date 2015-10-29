@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
@@ -30,8 +31,13 @@ public class GameController : MonoBehaviour {
 	public GameObject enemyHead;
 	public GameObject playerHead;
 
+	public Text ZText;
+	public Text endText;
+
 	// Use this for initialization
 	void Start () {
+		ZText.text = "";
+		endText.text = "";
 		win = false;
 		lose = false;
 		slash = false;
@@ -44,59 +50,68 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		//Debug.Log("Se acabo la espera");
-		if(Time.time > tAtaque && !exclamation.activeInHierarchy && !win && !lose){
+		if(Time.timeSinceLevelLoad > tAtaque && !exclamation.activeInHierarchy && !win && !lose){
 			exclamation.SetActive(true);
 			//tValido += Time.time;
 		}
-		if(Time.time < tValido + tAtaque && Input.GetKey(KeyCode.Z) && !win && exclamation.activeInHierarchy){
-			tFlash = Time.time + 0.2f;
+		if(Time.timeSinceLevelLoad < tValido + tAtaque && Input.GetKey(KeyCode.Z) && !win && exclamation.activeInHierarchy){
+			tFlash = Time.timeSinceLevelLoad  + 0.2f;
 			exclamation.SetActive(false);
 			Cam.RenderSlash();
 			slashController.SlashAnimation();
 			win = true;
 		}
-		if(Time.time < tAtaque && Input.GetKey(KeyCode.Z) && !lose || Time.time > tValido + tAtaque && !lose && !win){
-			tFlash = Time.time + 0.2f;
+		if(Time.timeSinceLevelLoad < tAtaque && Input.GetKey(KeyCode.Z) && !lose || Time.timeSinceLevelLoad > tValido + tAtaque && !lose && !win){
+			tFlash = Time.timeSinceLevelLoad + 0.2f;
 			exclamation.SetActive(false);
 			Cam.RenderSlash();
 			slashController.SlashAnimation();
 			lose = true;
 		}
-		if(Time.time > tFlash && !slash){
+		if(Time.timeSinceLevelLoad > tFlash && !slash){
 			slash = true;
 			PlayerController.StandAnimation();
 			EnemyController.StandAnimation();
 			Cam.RenderDefault();
-			tDesangre=Time.time + 0.9f;
+			tDesangre=Time.timeSinceLevelLoad + 0.9f;
 		}
-		if (Time.time > tDesangre && slash && !over && win && !blooded) {
+		if (Time.timeSinceLevelLoad > tDesangre && slash && !over && win && !blooded) {
 			blooded= true;
 			Instantiate(blood, new Vector3(-3.60f,0,0), Quaternion.Euler(0,180,12));
-			tEsperaGanador = Time.time + 0.9f;
+			tEsperaGanador = Time.timeSinceLevelLoad + 0.9f;
 		}
-		if (Time.time > tDesangre && slash && !over && lose && !blooded) {
+		if (Time.timeSinceLevelLoad > tDesangre && slash && !over && lose && !blooded) {
 			blooded= true;
 			Instantiate(blood, new Vector3(2.80f,0,0), Quaternion.Euler(0,0,32));
-			tEsperaGanador = Time.time + 0.9f;
+			tEsperaGanador = Time.timeSinceLevelLoad + 0.9f;
 		}
-		if(Time.time > tEsperaGanador && slash && !over && win && blooded){
+		if(Time.timeSinceLevelLoad > tEsperaGanador && slash && !over && win && blooded){
 			over = true;
 			GameObject.FindWithTag("Blood").SetActive(false);
 			Instantiate(enemyHead, new Vector3(-3.60f,0,0), Quaternion.Euler(0,180,12));
 			PlayerController.WinAnimation();
 			EnemyController.DeathAnimation();
+			endText.text = "You win";
+			ZText.text = "Press Z to continue";
 
 		}
-		if(Time.time > tEsperaGanador && slash && !over && lose && blooded){
+		if(Time.timeSinceLevelLoad > tEsperaGanador && slash && !over && lose && blooded){
 			over = true;
 			GameObject.FindWithTag("Blood").SetActive(false);
 			Instantiate(playerHead, new Vector3(3.5f,0,0), Quaternion.identity);
 			PlayerController.DeathAnimation();
 			EnemyController.WinAnimation();
+			endText.text = "You lose";
+			ZText.text = "Press Z to try again";
 		}
 
+		if(over && lose && Input.GetKey(KeyCode.Z)){
+			Application.LoadLevel(Application.loadedLevel);
+		}
+		if(over && win && Input.GetKey(KeyCode.Z)){
+			Application.LoadLevel(Application.loadedLevel+1);
+		}
 
 	}
 
