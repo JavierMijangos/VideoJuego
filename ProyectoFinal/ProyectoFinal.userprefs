@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoadNextLevel.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
     <Files>
       <File FileName="Assets\Scripts\GameController.cs" Line="112" Column="3" />
-      <File FileName="Assets\Scripts\DuelAnimationController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LoadNextLevel.cs" Line="6" Column="32" />
+      <File FileName="Assets\Scripts\DuelAnimationController.cs" Line="17" Column="31" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="32" Column="36" />
+      <File FileName="C:\Users\Public\Documents\Unity Projects\2DAnimation\Assets\playerController.cs" Line="49" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
