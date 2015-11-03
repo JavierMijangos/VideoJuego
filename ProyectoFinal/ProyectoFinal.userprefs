@@ -2,11 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScripts\PlayerControler.cs">
     <Files>
-      <File FileName="ProyectoFinal.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScripts\PlayerControler.cs" Line="56" Column="3" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DuelAnimationController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LoadNextLevel.cs" Line="6" Column="32" />
+      <File FileName="Assets\Scripts\PlayerScripts\PlayerControler.cs" Line="53" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerControler : MonoBehaviour {
@@ -12,6 +12,8 @@ public class PlayerControler : MonoBehaviour {
 	
 	
 	private bool grounded = false;
+	private bool crouching = false;
+	private bool atacking = false;
 	private Animator anim;
 	private Rigidbody2D rb2d;
 	
@@ -26,14 +28,35 @@ public class PlayerControler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-		if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
-		{
+		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
+		if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
 			jump = true;
 		}
 
-		if(grounded){
-			anim.SetBool("Jump", false);
+		if (grounded) {
+			anim.SetBool ("Jump", false);
+		}
+
+		if (Input.GetKey (KeyCode.DownArrow) && grounded) {
+			anim.SetBool ("Crouch", true);
+			crouching = true;
+		} else {
+			anim.SetBool ("Crouch", false);
+			crouching = false;
+		}
+
+		if (Input.GetKey (KeyCode.Z)) {
+			anim.SetBool ("Atack", true);
+			atacking = true;
+			//StartCoroutine (Atack ());
+		} else {
+			anim.SetBool ("Atack", false);
+			atacking = false;
+		}
+	
+
+		if(!atacking){
+			//StopCoroutine(Atack());
 		}
 	}
 	
@@ -42,7 +65,7 @@ public class PlayerControler : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 
 		bool running = false;
-		if (h != 0) {
+		if (h != 0 && !crouching) {
 
 			anim.SetBool ("Run", true);
 			running = true;
@@ -53,7 +76,7 @@ public class PlayerControler : MonoBehaviour {
 
 		}
 
-		if (h * rb2d.velocity.x < maxSpeed ) {
+		if (h * rb2d.velocity.x < maxSpeed && !crouching && !atacking) {
 			//rb2d.AddForce (Vector2.right * h * moveForce);
 			rb2d.velocity = new Vector2(maxSpeed * h ,rb2d.velocity.y);
 		} else {
@@ -91,4 +114,11 @@ public class PlayerControler : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	IEnumerator Atack(){
+		yield return new WaitForSeconds (0.2f);
+		anim.SetBool ("Atack", false);
+		atacking = false;
+	}
 }
+
