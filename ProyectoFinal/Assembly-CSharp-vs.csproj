@@ -46,10 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AreaPrueb.cs" />
+     <Compile Include="Assets\Eliminar.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\DuelAnimationController.cs" />
+     <Compile Include="Assets\Scripts\EnemyAtack.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\LoadNextLevel.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerControler.cs" />
      <Compile Include="Assets\Scripts\SlashAnimatorController.cs" />
  <Reference Include="UnityEngine.UI">

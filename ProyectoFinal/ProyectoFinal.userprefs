@@ -2,7 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScripts\PlayerControler.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScripts\PlayerControler.cs" Line="53" Column="32" />
+      <File FileName="Assets\Scripts\PlayerScripts\PlayerControler.cs" Line="103" Column="27" />
+      <File FileName="Assets\Scripts\EnemyAtack.cs" Line="1" Column="1" />
+      <File FileName="Assets\Eliminar.cs" Line="1" Column="1" />
+      <File FileName="Assets\AreaPrueb.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
