@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour {
 
@@ -14,8 +15,10 @@ public class PlayerControler : MonoBehaviour {
 	public GameObject normalAtackTrigger;
 	public GameObject airAttackTrigger;
 	public GameObject crouchAtackTrigger;
+	public GameObject specialObj;
 
 	public Transform groundCheck;
+	public Transform specialSpawner;
 	
 	
 	private bool grounded = false;
@@ -29,9 +32,38 @@ public class PlayerControler : MonoBehaviour {
 	private float timing=0;
 
 	private float hitSide;
+
+	private int healt;
+
+	public RectTransform healthTranform;
+	private float cachedY;
+	private float minXValue;
+	private float maxXValue;
+	public int maxHealt;
+
+	public Image visualHealth;
 	
+	private int power;
+	public RectTransform powerTranform;
+	private float cachedPowerY;
+	private float minXPowerValue;
+	private float maxXPowerValue;
+	public int maxPower;
+	
+	public Image visualPower;
 
 	void Start(){
+		cachedY = healthTranform.position.y;
+		maxXValue = healthTranform.position.x;
+		minXValue = healthTranform.position.x - healthTranform.rect.width;
+		healt = 100;
+
+		cachedPowerY = powerTranform.position.y;
+		maxXPowerValue = powerTranform.position.x;
+		minXPowerValue = powerTranform.position.x - powerTranform.rect.width;
+		power = 0;
+		HandlePower ();
+
 		StartCoroutine (Atack ());
 	}
 
@@ -45,6 +77,13 @@ public class PlayerControler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
+		//Eliminar luego---
+		if(Input.GetKeyDown(KeyCode.J)){
+			GivePower();
+		}
+		//-----------------
+
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 		if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
 			jump = true;
@@ -77,9 +116,11 @@ public class PlayerControler : MonoBehaviour {
 			atacking = false;
 		}
 
-		if (Input.GetKeyDown (KeyCode.X) && grounded) {
+		if (Input.GetKeyDown (KeyCode.X) && grounded && power == 3) {
 			Debug.Log("Special");
+			power = 0;
 			anim.SetBool ("Special", true);
+			StartCoroutine(SpecialAtack());
 		} else {
 			anim.SetBool ("Special", false);
 		}
@@ -88,40 +129,27 @@ public class PlayerControler : MonoBehaviour {
 			Flip();
 		}
 
-		if(!atacking){
-			//StopCoroutine(Atack());
-		}
-
-
 	}
 	
 	void FixedUpdate()
 	{
 		float h = Input.GetAxis ("Horizontal");
-
 		bool running = false;
-		if (h != 0 && !crouching) {
 
+		if (h != 0 && !crouching) {
 			anim.SetBool ("Run", true);
 			running = true;
 		} else {
 			anim.SetBool ("Run", false);
 			h = 0;
 			running = false;
-
 		}
 
 		if (h * rb2d.velocity.x < maxSpeed && !crouching && !atacking) {
-			//rb2d.AddForce (Vector2.right * h * moveForce);
 			rb2d.velocity = new Vector2(maxSpeed * h ,rb2d.velocity.y);
 		} else {
 			rb2d.velocity = new Vector2(0f,rb2d.velocity.y);
 		}
-
-		
-		//if (Mathf.Abs (rb2d.velocity.x) > maxSpeed) {
-		//	rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
-		//}
 
 		if(!running){
 			rb2d.velocity = new Vector2(0f,rb2d.velocity.y);
@@ -132,8 +160,6 @@ public class PlayerControler : MonoBehaviour {
 		}else if (h < 0 && facingRight){
 			Flip ();
 		}
-
-
 		
 		if (jump)
 		{
@@ -149,7 +175,6 @@ public class PlayerControler : MonoBehaviour {
 			}else{
 				rb2d.AddForce(new Vector2(-hitForce, 0f));
 			}
-
 		}
 		
 		if(waitingTime< timing){
@@ -157,6 +182,7 @@ public class PlayerControler : MonoBehaviour {
 			getingHit = false;
 			timing=0;
 		}
+
 	}
 	
 	
@@ -169,10 +195,8 @@ public class PlayerControler : MonoBehaviour {
 	}
 
 	IEnumerator Atack(){
-		//yield return new WaitForSeconds (0.2f);
-		//anim.SetBool ("Atack", false);
-		//atacking = false;
 		bool airAtackValid = true;
+
 		while (true) {
 			if(atacking && grounded && !crouching){
 				yield return new WaitForSeconds (0.1f);
@@ -205,14 +229,59 @@ public class PlayerControler : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (0.00f);
 		}
-		//yield return new WaitForSeconds (0.0f);
+
+	}
+
+	IEnumerator SpecialAtack(){
+		yield return new WaitForSeconds (1f);
+		Quaternion rot;
+
+		if (facingRight) {
+			rot = Quaternion.Euler (new Vector3 (0, 0));
+		} else {
+			rot = Quaternion.Euler (new Vector3 (0,180));
+		}
+
+		HandlePower();
+		Instantiate (specialObj, specialSpawner.position, rot);
 	}
 	
 
-	public void HitPlayer (float otherObjSide){
+	public void HitPlayer (float otherObjSide, int damage){
 		anim.SetBool ("GetHit", true);
 		hitSide = otherObjSide; //other.gameObject.transform.position.x;
 		getingHit = true;
+		healt -= damage;
+		HandleHealth ();
 	}
+
+	public void GivePower(){
+		if(power < 3){
+			power += 1;
+			HandlePower();
+		}
+	}
+
+	private float MapValues(float x, float inMin, float inMax, float outMin, float outMax){
+		return (x - inMin)*(outMax - outMin) / (inMax - inMin) + outMin;
+	}
+
+	private void HandleHealth(){
+		float currentXValue = MapValues (healt, 0, maxHealt, minXValue, maxXValue);
+		healthTranform.position = new Vector3 (currentXValue, cachedY);
+
+		if (healt > maxHealt / 2) {
+			visualHealth.color = new Color32 ((byte)MapValues (healt, maxHealt / 2, maxHealt, 255, 0), 255, 0, 255);
+		} else {
+			visualHealth.color = new Color32(255,(byte)MapValues(healt, 0, maxHealt/2, 0, 255), 0,255);
+		}
+
+	}
+
+	private void HandlePower(){
+		float currentXValue = MapValues (power, 0, maxPower, minXPowerValue, maxXPowerValue);
+		powerTranform.position = new Vector3 (currentXValue, cachedPowerY);
+	}
+
 }
 
