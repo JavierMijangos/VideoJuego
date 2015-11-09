@@ -4,6 +4,7 @@ using System.Collections;
 public class HitEnemy : MonoBehaviour {
 
 	private KurokoController kuController;
+	private HanzoController haController;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,9 @@ public class HitEnemy : MonoBehaviour {
 			kuController.HitEnemy(1);
 		}
 		if(other.CompareTag("BodyHanzo")){
-			other.gameObject.GetComponent<EnemyController> ();
+			haController= other.gameObject.GetComponentInParent<HanzoController> ();
+			haController.HitEnemy(1);
+
 		}
 		if(other.CompareTag("BodyWanfu")){
 
