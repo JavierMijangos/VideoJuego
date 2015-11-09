@@ -22,7 +22,7 @@ public class Eliminar : MonoBehaviour {
 		}
 		if(other.CompareTag("BodyPlayer")){
 			Debug.Log("Hitting the player");
-			playerControler.HitPlayer(this.gameObject.transform.position.x);
+			playerControler.HitPlayer(this.gameObject.transform.position.x,1);
 		}
 	}
 }

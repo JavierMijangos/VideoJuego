@@ -12,7 +12,7 @@ public class HanzoTrigger : MonoBehaviour {
 	void Start () {
 		bandera = true;
 		tiempo = Time.time;
-		aux_tiempo = Time.time;
+		//aux_tiempo = Time.time;
 		Parent = gameObject.GetComponentInParent<EnemyController> ();
 	}
 	
