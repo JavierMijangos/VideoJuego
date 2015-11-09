@@ -6,7 +6,9 @@ public class EnemyController : MonoBehaviour {
 	[HideInInspector] public bool facingRight = true;
 	//[HideInInspector] public bool jump = false;
 	public float moveForce = 365f;
-	public float maxSpeed ;
+	public float maxSpeed;
+	public GameObject gameObject;
+	public Transform shotSpawn;
 	float tiempo;
 
 	//public Transform groundCheck;
@@ -31,6 +33,10 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (atacking && Time.time>tiempo) {
+			Instantiate(gameObject, shotSpawn.position, shotSpawn.rotation);
+			tiempo = Time.time + 2 ;
+		}
 		//grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 		//if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
 			//jump = true;
@@ -48,14 +54,14 @@ public class EnemyController : MonoBehaviour {
 //			crouching = false;
 //		}
 		
-		if (Input.GetKey (KeyCode.Z)) {
-			anim.SetBool ("gethit", true);
-			atacking = true;
-			//StartCoroutine (Atack ());
-		} else {
-			anim.SetBool ("gethit", false);
-			atacking = false;
-		}
+//		if (Input.GetKey (KeyCode.Z)) {
+//			anim.SetBool ("gethit", true);
+//			atacking = true;
+//			//StartCoroutine (Atack ());
+//		} else {
+//			anim.SetBool ("gethit", false);
+//			atacking = false;
+//		}
 		
 		
 		if(!atacking){
@@ -131,24 +137,16 @@ public class EnemyController : MonoBehaviour {
 
 		switch(count){
 
-		case 1:
-
-					
-					anim.SetBool("log",false);
-					anim.SetBool("stab",false);
-					anim.SetBool("longAtack",true);
-
-								
+		case 1:							
+     		anim.SetBool("log",false);
+			anim.SetBool("stab",false);
+			anim.SetBool("longAtack",true);											
 			break;
 		case 2:
-
-
-
 			anim.SetBool("longAtack",false);
 			anim.SetBool("stab",false);
 			anim.SetBool("log",true);
-				
-			
+						
 			break;
 		case 3:
 
@@ -158,7 +156,7 @@ public class EnemyController : MonoBehaviour {
 
 			break;
 		case 4:
-			anim.SetBool("scape",false);
+			anim.SetBool("log",false);
 			anim.SetBool("longAtack",false);
 			anim.SetBool("stab",false);
 			break;
@@ -171,10 +169,8 @@ public class EnemyController : MonoBehaviour {
 				
 	}
 	public void accionSalida(){
-		anim.SetBool("scape",false);
-		anim.SetBool("longAtack",false);
-		anim.SetBool("stab",false);
-		anim.SetBool ("idle", true);
+		anim.SetBool ("longAtack1",true);
+		atacking = true;
 	}
 
 }
