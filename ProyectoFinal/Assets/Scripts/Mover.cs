@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class Mover : MonoBehaviour {
-	
+
 	public int speed;
 	void Start () {
-		GetComponent<Rigidbody> ().velocity = -transform.right * speed;	
+		GetComponent<Rigidbody2D> ().velocity = transform.right * speed;	
+
 	}
 	
 }

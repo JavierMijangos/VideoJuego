@@ -119,17 +119,17 @@ public class HanzoController : MonoBehaviour {
 	}
 	IEnumerator EndAtack(int count){
 		if(count==1){
-			yield return new WaitForSeconds (0.40f);
+			yield return new WaitForSeconds (0.70f);
 			anim.SetBool ("longAtack", false);
 			atackTrigger.SetActive (false);
 		}else{
 			if(count==2){
-				yield return new WaitForSeconds (0.40f);
+				yield return new WaitForSeconds (0.70f);
 				anim.SetBool ("log", false);
 				atackTrigger.SetActive (false);
 			}else{
 				if(count==3){
-					yield return new WaitForSeconds (0.40f);
+					yield return new WaitForSeconds (0.70f);
 					anim.SetBool ("stab", false);
 					atackTrigger.SetActive (false);
 				}

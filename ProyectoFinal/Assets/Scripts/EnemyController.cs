@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
 	//[HideInInspector] public bool jump = false;
 	public float moveForce = 365f;
 	public float maxSpeed;
-	public GameObject gameObject;
+
 	public Transform shotSpawn;
 	float tiempo;
 
@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour {
 //	private bool crouching = false;
 	private bool atacking = false;
 	private Animator anim;
-	private Rigidbody2D rb2d;
+
 	
 	
 	// Use this for initialization
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		Flip ();
 		anim = GetComponent<Animator>();
-		rb2d = GetComponent<Rigidbody2D>();
+
 		tiempo = Time.time + 3;
 	}
 	
