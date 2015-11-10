@@ -59,12 +59,14 @@
      <Compile Include="Assets\Scripts\HanzoTrigger.cs" />
      <Compile Include="Assets\Scripts\HitEnemy.cs" />
      <Compile Include="Assets\Scripts\HitPlayer.cs" />
+     <Compile Include="Assets\Scripts\Jugar.cs" />
      <Compile Include="Assets\Scripts\KurokoArea.cs" />
      <Compile Include="Assets\Scripts\KurokoController.cs" />
      <Compile Include="Assets\Scripts\LoadNextLevel.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\MoverSpecial.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerControler.cs" />
+     <Compile Include="Assets\Scripts\Reintentar.cs" />
      <Compile Include="Assets\Scripts\SlashAnimatorController.cs" />
      <Compile Include="Assets\Scripts\SlideCamera.cs" />
      <Compile Include="Assets\Scripts\SpawnBackground.cs" />

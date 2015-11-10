@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HanzoController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Jugar.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mover.cs" Line="8" Column="43" />
+      <File FileName="Assets\Scripts\Reintentar.cs" Line="26" Column="36" />
       <File FileName="Assets\Scripts\HitPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\KurokoController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HanzoController.cs" Line="132" Column="42" />
       <File FileName="Assets\Scripts\KurokoArea.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HanzoArea.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SpawnKuroko.cs" Line="1" Column="1" />
@@ -13,7 +12,9 @@
       <File FileName="Assets\Scripts\HanzoTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HitEnemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SpawnBackground.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="29" Column="1" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Jugar.cs" Line="29" Column="36" />
+      <File FileName="Assets\Scripts\PlayerScripts\PlayerControler.cs" Line="87" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

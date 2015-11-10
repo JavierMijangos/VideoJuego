@@ -56,7 +56,7 @@ public class PlayerControler : MonoBehaviour {
 		cachedY = healthTranform.position.y;
 		maxXValue = healthTranform.position.x;
 		minXValue = healthTranform.position.x - healthTranform.rect.width;
-		healt = 100;
+		healt = 10;
 
 		cachedPowerY = powerTranform.position.y;
 		maxXPowerValue = powerTranform.position.x;
@@ -81,6 +81,10 @@ public class PlayerControler : MonoBehaviour {
 		//Eliminar luego---
 		if(Input.GetKeyDown(KeyCode.J)){
 			GivePower();
+		}
+		if(healt==0){
+			anim.SetBool("Death",true);
+			Application.LoadLevel(6);
 		}
 		//-----------------
 
