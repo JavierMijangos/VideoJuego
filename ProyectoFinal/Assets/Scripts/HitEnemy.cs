@@ -26,8 +26,5 @@ public class HitEnemy : MonoBehaviour {
 			haController.HitEnemy(1);
 
 		}
-		if(other.CompareTag("BodyWanfu")){
-
-		}
 	}
 }

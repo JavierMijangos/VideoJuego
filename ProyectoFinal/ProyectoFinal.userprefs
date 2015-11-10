@@ -1,19 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HanzoController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScripts\PlayerControler.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mover.cs" Line="8" Column="43" />
-      <File FileName="Assets\Scripts\HitPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WanController.cs" Line="63" Column="30" />
       <File FileName="Assets\Scripts\KurokoController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HanzoController.cs" Line="132" Column="42" />
       <File FileName="Assets\Scripts\KurokoArea.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HanzoArea.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnKuroko.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnHanzo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HanzoTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HitEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScripts\PlayerControler.cs" Line="270" Column="24" />
+      <File FileName="Assets\Scripts\DestroyBackGround.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HitPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpecialHit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SlideCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SpawnBackground.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="29" Column="1" />
+      <File FileName="Assets\Scripts\SpawnHanzo.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
