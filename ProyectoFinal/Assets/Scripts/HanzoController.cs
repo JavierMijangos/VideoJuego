@@ -5,6 +5,8 @@ public class HanzoController : MonoBehaviour {
 	public int healt = 3;
 	private int itemCount=1;
 	public Transform itemSpawner;
+	public GameObject HItem;
+	public GameObject EItem;
 
 	[HideInInspector] public bool facingRight = true;
 	[HideInInspector] public bool validMove = true;
@@ -153,20 +155,20 @@ public class HanzoController : MonoBehaviour {
 		case 0:
 		case 1:
 		case 2:
-		case 3:
-			Debug.Log("No spawneo nada");
+			Debug.Log("Life");
+			Instantiate(HItem, itemSpawner.position, Quaternion.identity);
 			break;
+		case 3:
 		case 4:
 		case 5:
+			Debug.Log("No spawneo nada");
+			break;
 		case 6:
 		case 7:
-			Debug.Log("Life");
-			//Instantiate(life, itemSpawner.position, Quaternion.identity);
-			break;
 		case 8:
 		case 9:
 			Debug.Log("power");
-			//Instantiate(power, itemSpawner.position, Quaternion.identity);
+			Instantiate(EItem, itemSpawner.position, Quaternion.identity);
 			break;
 		}
 	}

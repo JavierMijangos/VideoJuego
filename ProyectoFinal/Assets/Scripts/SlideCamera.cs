@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class SlideCamera : MonoBehaviour {
-	private Transform player;
+	public Transform player;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindWithTag ("Player").transform;
+		//player = GameObject.FindWithTag ("Player").transform;
 	}
 	
 	// Update is called once per frame

@@ -81,7 +81,7 @@ public class KurokoArea : MonoBehaviour {
 
 	void decideToMove(){
 		int value = Random.Range (0, 9);
-		if (value > 2) {
+		if (value > 4) {
 			controller.validMove = false;
 			running = true;
 

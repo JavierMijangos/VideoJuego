@@ -6,6 +6,7 @@ public class PlayerControler : MonoBehaviour {
 
 	[HideInInspector] public bool facingRight = true;
 	[HideInInspector] public bool jump = false;
+	[HideInInspector] public bool death = false;
 	public float moveForce = 365f;
 	public float maxSpeed ;
 	public float jumpForce = 1000f;
@@ -89,7 +90,7 @@ public class PlayerControler : MonoBehaviour {
 		//-----------------
 
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-		if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && grounded && !death) {
 			jump = true;
 		}
 
@@ -97,7 +98,7 @@ public class PlayerControler : MonoBehaviour {
 			anim.SetBool ("Jump", false);
 		}
 
-		if (Input.GetKey (KeyCode.DownArrow) && grounded) {
+		if (Input.GetKey (KeyCode.DownArrow) && grounded && !death) {
 			anim.SetBool ("Crouch", true);
 			crouching = true;
 			Vector3 thePosition = bodyTrigger.transform.localPosition;
@@ -111,7 +112,7 @@ public class PlayerControler : MonoBehaviour {
 			bodyTrigger.transform.localPosition = thePosition;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Z)) {
+		if (Input.GetKeyDown (KeyCode.Z) && !death) {
 			anim.SetBool ("Atack", true);
 			atacking = true;
 			//StartCoroutine (Atack ());
@@ -120,7 +121,7 @@ public class PlayerControler : MonoBehaviour {
 			atacking = false;
 		}
 
-		if (Input.GetKeyDown (KeyCode.X) && grounded && power == 3) {
+		if (Input.GetKeyDown (KeyCode.X) && grounded && power == 3 && !death) {
 			Debug.Log("Special");
 			power = 0;
 			anim.SetBool ("Special", true);
@@ -129,7 +130,7 @@ public class PlayerControler : MonoBehaviour {
 			anim.SetBool ("Special", false);
 		}
 
-		if(crouching && facingRight && Input.GetKey(KeyCode.LeftArrow) || crouching && !facingRight && Input.GetKey(KeyCode.RightArrow)){
+		if(crouching && facingRight && Input.GetKey(KeyCode.LeftArrow) || crouching && !facingRight && Input.GetKey(KeyCode.RightArrow) && !death){
 			Flip();
 		}
 
@@ -140,7 +141,7 @@ public class PlayerControler : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		bool running = false;
 
-		if (h != 0 && !crouching) {
+		if (h != 0 && !crouching && !death) {
 			anim.SetBool ("Run", true);
 			running = true;
 		} else {
@@ -149,7 +150,7 @@ public class PlayerControler : MonoBehaviour {
 			running = false;
 		}
 
-		if (h * rb2d.velocity.x < maxSpeed && !crouching && !atacking) {
+		if (h * rb2d.velocity.x < maxSpeed && !crouching && !atacking && !death) {
 			rb2d.velocity = new Vector2(maxSpeed * h ,rb2d.velocity.y);
 		} else {
 			rb2d.velocity = new Vector2(0f,rb2d.velocity.y);
@@ -172,7 +173,7 @@ public class PlayerControler : MonoBehaviour {
 			jump = false;
 		}
 
-		if (getingHit) {
+		if (getingHit && !death) {
 			timing += 0.1f;
 			if(hitSide < transform.position.x){
 				rb2d.AddForce(new Vector2(hitForce, 0f));
@@ -200,7 +201,6 @@ public class PlayerControler : MonoBehaviour {
 
 	IEnumerator Atack(){
 		bool airAtackValid = true;
-
 		while (true) {
 			if(atacking && grounded && !crouching){
 				yield return new WaitForSeconds (0.1f);
@@ -257,6 +257,24 @@ public class PlayerControler : MonoBehaviour {
 		getingHit = true;
 		healt -= damage;
 		HandleHealth ();
+
+		if(healt <= 0){
+			anim.SetBool("Death", true);
+			death = true;
+			StartCoroutine(die ());
+		}
+	}
+
+	IEnumerator die(){
+		yield return new WaitForSeconds (0.02f);
+		anim.SetBool("Death", false);
+	}
+
+	private void GiveHealth (){
+		if(healt < maxHealt-5){
+			healt += 5;
+			HandleHealth();
+		}
 	}
 
 	public void GivePower(){
@@ -285,6 +303,18 @@ public class PlayerControler : MonoBehaviour {
 	private void HandlePower(){
 		float currentXValue = MapValues (power, 0, maxPower, minXPowerValue, maxXPowerValue);
 		powerTranform.position = new Vector3 (currentXValue, cachedPowerY);
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.CompareTag("HealthItem")){
+			GiveHealth();
+			Destroy(other.gameObject);
+		}
+		if(other.CompareTag("EnergyItem")){
+			GivePower();
+			Destroy(other.gameObject);
+		}
+
 	}
 
 }

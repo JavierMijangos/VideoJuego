@@ -15,7 +15,7 @@ public class SpawnHanzo : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.CompareTag("Player") && nSpawn == 0){
+		if(other.gameObject.name =="Player" && nSpawn == 0){
 			Instantiate (hanzo, transform.position, Quaternion.identity);
 			nSpawn = 1;
 		}
