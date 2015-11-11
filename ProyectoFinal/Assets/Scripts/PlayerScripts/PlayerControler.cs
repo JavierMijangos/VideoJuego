@@ -57,7 +57,7 @@ public class PlayerControler : MonoBehaviour {
 		cachedY = healthTranform.position.y;
 		maxXValue = healthTranform.position.x;
 		minXValue = healthTranform.position.x - healthTranform.rect.width;
-		healt = 10;
+		healt = 100;
 
 		cachedPowerY = powerTranform.position.y;
 		maxXPowerValue = powerTranform.position.x;
@@ -83,10 +83,10 @@ public class PlayerControler : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.J)){
 			GivePower();
 		}
-		if(healt==0){
-			anim.SetBool("Death",true);
-			Application.LoadLevel(6);
-		}
+//		if(healt==0){
+//			anim.SetBool("Death",true);
+//			Application.LoadLevel(6);
+//		}
 		//-----------------
 
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
@@ -261,13 +261,16 @@ public class PlayerControler : MonoBehaviour {
 		if(healt <= 0){
 			anim.SetBool("Death", true);
 			death = true;
+
 			StartCoroutine(die ());
 		}
 	}
 
 	IEnumerator die(){
-		yield return new WaitForSeconds (0.02f);
+		yield return new WaitForSeconds (2.0f);
+		Application.LoadLevel(6);
 		anim.SetBool("Death", false);
+
 	}
 
 	private void GiveHealth (){

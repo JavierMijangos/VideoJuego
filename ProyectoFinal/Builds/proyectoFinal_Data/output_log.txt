@@ -1,0 +1,155 @@
+Initialize engine version: 5.1.2f1 (afd2369b692a)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) R5 Graphics (ID=0x9851)
+    Vendor:   ATI
+    VRAM:     1007 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.152 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: J:\Mis Archivos\Facultad de Matematicas\7mo Semestre\Introducción a la Programación de VideoJuegos\VideoJuego\ProyectoFinal\Builds\proyectoFinal_Data\Managed\System.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.613499 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 216.
+Total: 0.423704 ms (FindLiveObjects: 0.044114 ms CreateObjectMapping: 0.024109 ms MarkObjects: 0.331884 ms  DeleteObjects: 0.021544 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.626684 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 484.
+Total: 0.570411 ms (FindLiveObjects: 0.078482 ms CreateObjectMapping: 0.038471 ms MarkObjects: 0.429860 ms  DeleteObjects: 0.022057 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.197036 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 514.
+Total: 1.174677 ms (FindLiveObjects: 0.155426 ms CreateObjectMapping: 0.109260 ms MarkObjects: 0.739687 ms  DeleteObjects: 0.166711 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.468090 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 514.
+Total: 0.974110 ms (FindLiveObjects: 0.169789 ms CreateObjectMapping: 0.076430 ms MarkObjects: 0.702754 ms  DeleteObjects: 0.021544 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.075163 ms
+
+Unloading 83 unused Assets to reduce memory usage. Loaded Objects now: 520.
+Total: 0.994115 ms (FindLiveObjects: 0.119519 ms CreateObjectMapping: 0.079508 ms MarkObjects: 0.658127 ms  DeleteObjects: 0.135421 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.586071 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 520.
+Total: 0.977701 ms (FindLiveObjects: 0.152861 ms CreateObjectMapping: 0.077969 ms MarkObjects: 0.724812 ms  DeleteObjects: 0.018979 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.486044 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 520.
+Total: 0.972571 ms (FindLiveObjects: 0.147732 ms CreateObjectMapping: 0.078482 ms MarkObjects: 0.718143 ms  DeleteObjects: 0.025135 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.608641 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 520.
+Total: 1.005913 ms (FindLiveObjects: 0.153374 ms CreateObjectMapping: 0.077456 ms MarkObjects: 0.755076 ms  DeleteObjects: 0.016414 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.488096 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 520.
+Total: 0.998732 ms (FindLiveObjects: 0.156965 ms CreateObjectMapping: 0.078995 ms MarkObjects: 0.738148 ms  DeleteObjects: 0.022057 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.143145 ms
+
+Unloading 252 unused Assets to reduce memory usage. Loaded Objects now: 820.
+Total: 2.166228 ms (FindLiveObjects: 0.269303 ms CreateObjectMapping: 0.153887 ms MarkObjects: 0.907938 ms  DeleteObjects: 0.832533 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.622521 ms
+
+Unloading 509 unused Assets to reduce memory usage. Loaded Objects now: 266.
+Total: 2.147249 ms (FindLiveObjects: 0.181074 ms CreateObjectMapping: 0.132856 ms MarkObjects: 0.693521 ms  DeleteObjects: 1.137231 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.426027 ms
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 822.
+Total: 0.891010 ms (FindLiveObjects: 0.139525 ms CreateObjectMapping: 0.108234 ms MarkObjects: 0.564768 ms  DeleteObjects: 0.076430 ms)
+
+power
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+power
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.574031 ms
+
+Unloading 509 unused Assets to reduce memory usage. Loaded Objects now: 266.
+Total: 2.116984 ms (FindLiveObjects: 0.127213 ms CreateObjectMapping: 0.132856 ms MarkObjects: 0.678645 ms  DeleteObjects: 1.174677 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.523490 ms
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 822.
+Total: 0.944358 ms (FindLiveObjects: 0.142602 ms CreateObjectMapping: 0.074892 ms MarkObjects: 0.635557 ms  DeleteObjects: 0.088742 ms)
+
+power
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+No spawneo nada
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Special
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Special
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Special
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+No spawneo nada
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+power
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.265742 ms
+
+Unloading 509 unused Assets to reduce memory usage. Loaded Objects now: 266.
+Total: 2.189311 ms (FindLiveObjects: 0.176458 ms CreateObjectMapping: 0.133882 ms MarkObjects: 0.725837 ms  DeleteObjects: 1.150055 ms)
+

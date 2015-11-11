@@ -15,18 +15,19 @@ public class Jugar : MonoBehaviour {
 		
 	}
 
-
+	int fontSize = 30;
 	void OnGUI () {
 		// Make a background box
-		GUI.Box(new Rect(350,90,130,110), "MENU PRINCIPAL");
+		GUI.skin.box.fontSize = fontSize;
+		GUI.Box(new Rect(0,0,Screen.width,Screen.height), "MENU PRINCIPAL");
 
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-		if(GUI.Button(new Rect(365,120,100,20), "JUGAR")) {
-			Application.LoadLevel("Persecution");
+		if(GUI.Button(new Rect(Screen.width/2-100,Screen.height/2-100,200,50), "JUGAR")) {
+			Application.LoadLevel("DuelInstructions");
 		}
 
 		
-		if (GUI.Button (new Rect (365,160, 100, 20), "SALIR")) {
+		if (GUI.Button (new Rect (Screen.width/2-100,Screen.height/2, 200, 50), "SALIR")) {
 			//print ("you clicked the text button");
 			Application.Quit();
 

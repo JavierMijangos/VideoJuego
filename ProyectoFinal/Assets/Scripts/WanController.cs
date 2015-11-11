@@ -201,7 +201,12 @@ public class WanController : MonoBehaviour {
 		if (!headSpawned) {
 			Instantiate (head, spawnerHead.position, Quaternion.identity);
 			headSpawned = true;
+
+
+
 		}
-		yield return new WaitForSeconds (0);
+		yield return new WaitForSeconds (1.8f);
+		Application.LoadLevel("Win");
+
 	}
 }
